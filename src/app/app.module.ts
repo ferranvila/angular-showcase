@@ -11,6 +11,7 @@ import { MatTableModule } from '@angular/material/table';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { ScullyLibModule } from '@scullyio/ng-lib';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { PostsComponent } from './posts/posts.component';
@@ -32,6 +33,7 @@ import { PostsComponent } from './posts/posts.component';
     MatChipsModule,
     MatInputModule,
     MatSnackBarModule,
+    ScullyLibModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

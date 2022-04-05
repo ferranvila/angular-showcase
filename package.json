@@ -5,9 +5,10 @@
     "ng": "ng",
     "start": "ng serve",
     "start:scully": "npx scully serve --",
-    "build": "ng build",
+    "build": "ng build --stats-json",
     "build:scully": "npx scully --noPrompt --",
     "watch": "ng build --watch --configuration development",
+    "analyze": "webpack-bundle-analyzer dist/angular-showcase/stats.json",
     "test": "ng test"
   },
   "private": true,
@@ -47,6 +48,7 @@
     "karma-coverage": "~2.1.0",
     "karma-jasmine": "~4.0.0",
     "karma-jasmine-html-reporter": "~1.7.0",
-    "typescript": "~4.5.2"
+    "typescript": "~4.5.2",
+    "webpack-bundle-analyzer": "^4.5.0"
   }
 }

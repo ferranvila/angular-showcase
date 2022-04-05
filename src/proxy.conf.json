@@ -1,0 +1,7 @@
+{
+  "/json-server": {
+    "target": "https://my-json-server.typicode.com/ferranvila",
+    "secure": false,
+    "changeOrigin": true
+  }
+}

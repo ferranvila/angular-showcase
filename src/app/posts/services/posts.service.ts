@@ -3,6 +3,7 @@ import { Injectable } from '@angular/core';
 import { Observable, of } from 'rxjs';
 import { catchError, tap, toArray } from 'rxjs/operators';
 import { NotificationsService } from 'src/app/services/notifications.service';
+import { environment } from '../../../environments/environment';
 import { Post } from '../models';
 
 @Injectable({
@@ -22,10 +23,12 @@ export class PostsService {
    * @returns {Observable<Post[]>} array of posts
    */
   getPosts(): Observable<Post[]> {
-    return this.http.get<Post[]>('/json-server/posts').pipe(
-      tap((data) => console.log('[posts-service.ts] fetched posts: ', data)),
-      catchError(this.handleError([]))
-    );
+    return this.http
+      .get<Post[]>(`${environment.api.baseUrl}/json-server/posts`)
+      .pipe(
+        tap((data) => console.log('[posts-service.ts] fetched posts: ', data)),
+        catchError(this.handleError([]))
+      );
   }
 
   /**
@@ -34,13 +37,15 @@ export class PostsService {
    * @returns {Observable<Post[]>} array of posts
    */
   getPost(id: number): Observable<Post[]> {
-    return this.http.get<Post>(`/json-server/posts/${id}`).pipe(
-      tap((data) =>
-        console.log(`[posts-service.ts] fetched post id=${id}`, data)
-      ),
-      toArray(),
-      catchError(this.handleError([]))
-    );
+    return this.http
+      .get<Post>(`${environment.api.baseUrl}/json-server/posts/${id}`)
+      .pipe(
+        tap((data) =>
+          console.log(`[posts-service.ts] fetched post id=${id}`, data)
+        ),
+        toArray(),
+        catchError(this.handleError([]))
+      );
   }
 
   /**

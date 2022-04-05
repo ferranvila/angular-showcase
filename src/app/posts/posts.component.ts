@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { BehaviorSubject, Observable } from 'rxjs';
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Post } from './models';
 import { PostsService } from './services/posts.service';
 
@@ -8,14 +10,25 @@ import { PostsService } from './services/posts.service';
   styleUrls: ['./posts.component.scss'],
 })
 export class PostsComponent implements OnInit {
-  posts: Post[] = [];
+  posts$!: Observable<Post[]>;
+  private searchTerms = new BehaviorSubject<string>('');
   displayedColumns: string[] = ['id', 'title', 'tags'];
 
   constructor(private postsService: PostsService) {}
 
   ngOnInit(): void {
-    this.postsService.getPosts().subscribe((posts) => {
-      this.posts = posts;
-    });
+    this.posts$ = this.searchTerms.pipe(
+      debounceTime(100),
+      distinctUntilChanged(),
+      switchMap((term: string) => this.postsService.searchPosts(+term))
+    );
+  }
+
+  /**
+   * Method executed every time the input changes
+   * @param term input value with search term
+   */
+  search(term: string): void {
+    this.searchTerms.next(term);
   }
 }

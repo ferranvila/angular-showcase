@@ -1,7 +1,20 @@
 <div class="container">
   <div class="row">
     <div class="col p-3">
-      <table mat-table [dataSource]="posts" class="mat-elevation-z8">
+      <mat-form-field class="example-form-field" appearance="fill">
+        <mat-label>Post Search (ID)</mat-label>
+        <input
+          #searchBox
+          matInput
+          type="text"
+          (input)="search(searchBox.value)"
+        />
+      </mat-form-field>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col p-3">
+      <table mat-table [dataSource]="posts$" class="mat-elevation-z8">
         <ng-container matColumnDef="id">
           <th mat-header-cell *matHeaderCellDef>ID</th>
           <td mat-cell *matCellDef="let element">{{ element.id }}</td>

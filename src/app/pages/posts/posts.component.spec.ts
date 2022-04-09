@@ -1,4 +1,6 @@
+import { HttpClientTestingModule } from '@angular/common/http/testing';
 import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { PostsComponent } from './posts.component';
 
 describe('PostsComponent', () => {
@@ -7,7 +9,8 @@ describe('PostsComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      declarations: [PostsComponent],
+      imports: [HttpClientTestingModule, MatSnackBarModule],
+      declarations: [PostsComponent]
     }).compileComponents();
   });
 

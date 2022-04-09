@@ -1,10 +1,10 @@
-import { HttpClient } from '@angular/common/http'
-import { Injectable } from '@angular/core'
-import { Observable, of } from 'rxjs'
-import { catchError, tap, toArray } from 'rxjs/operators'
-import { NotificationsService } from 'src/app/services/notifications.service'
-import { environment } from '../../../../environments/environment'
-import { Post } from '../models'
+import { HttpClient } from '@angular/common/http';
+import { Injectable } from '@angular/core';
+import { Observable, of } from 'rxjs';
+import { catchError, tap, toArray } from 'rxjs/operators';
+import { NotificationsService } from 'src/app/services/notifications.service';
+import { environment } from '../../../../environments/environment';
+import { Post } from '../models';
 
 @Injectable({
   providedIn: 'root'
@@ -23,7 +23,7 @@ export class PostsService {
     return this.http.get<Post[]>(`${environment.api.baseUrl}/json-server/posts`).pipe(
       tap((data) => console.log('[posts-service.ts] fetched posts: ', data)),
       catchError(this.handleError([]))
-    )
+    );
   }
 
   /**
@@ -36,7 +36,7 @@ export class PostsService {
       tap((data) => console.log(`[posts-service.ts] fetched post id=${id}`, data)),
       toArray(),
       catchError(this.handleError([]))
-    )
+    );
   }
 
   /**
@@ -45,7 +45,7 @@ export class PostsService {
    * @returns {Observable<Post[]>} array of posts
    */
   searchPosts(term: number): Observable<Post[]> {
-    return term ? this.getPost(term) : this.getPosts()
+    return term ? this.getPost(term) : this.getPosts();
   }
 
   /**
@@ -55,8 +55,8 @@ export class PostsService {
    */
   private handleError<T>(result?: T) {
     return (error: unknown): Observable<T> => {
-      this.notificationsService.showNotification((error as Error).message)
-      return of(result as T)
-    }
+      this.notificationsService.showNotification((error as Error).message);
+      return of(result as T);
+    };
   }
 }

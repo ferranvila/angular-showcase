@@ -9,13 +9,6 @@ import { PostsComponent } from './posts.component';
 
 @NgModule({
   declarations: [PostsComponent],
-  imports: [
-    CommonModule,
-    PostsRoutingModule,
-    MatCardModule,
-    MatTableModule,
-    MatChipsModule,
-    MatInputModule,
-  ],
+  imports: [CommonModule, PostsRoutingModule, MatCardModule, MatTableModule, MatChipsModule, MatInputModule]
 })
 export class PostsModule {}

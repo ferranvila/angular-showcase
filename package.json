@@ -6,7 +6,8 @@
     "clean": "npx rimraf .angular dist node_modules package-lock.json",
     "start": "ng serve",
     "build": "ng build --stats-json",
-    "test": "ng test",
+    "test": "ng test --code-coverage --no-watch",
+    "test:watch": "ng test --code-coverage",
     "lint": "eslint '*/**/*.{js,ts,tsx}'",
     "i18n:extract": "ng extract-i18n --output-path=src/locale",
     "analyze": "webpack-bundle-analyzer dist/angular-showcase/stats.json",
@@ -56,6 +57,7 @@
     "karma-jasmine-html-reporter": "1.7.0",
     "prettier": "2.6.2",
     "prettier-eslint": "13.0.0",
+    "prettier-plugin-organize-imports": "2.3.4",
     "tslib": "2.3.1",
     "typescript": "4.5.2",
     "webpack-bundle-analyzer": "4.5.0"

@@ -2,6 +2,7 @@
   "name": "angular-showcase",
   "version": "0.0.0",
   "scripts": {
+    "prepare": "husky install",
     "clean": "npx rimraf .angular dist node_modules package-lock.json",
     "ng": "ng",
     "start": "ng serve",
@@ -43,6 +44,7 @@
     "eslint": "8.13.0",
     "eslint-config-prettier": "8.5.0",
     "eslint-plugin-prettier": "4.0.0",
+    "husky": "7.0.0",
     "jasmine-core": "4.0.0",
     "karma": "6.3.0",
     "karma-chrome-launcher": "3.1.0",

@@ -32,8 +32,3 @@ To get more help on the Angular CLI use `ng help` or go check out the [Angular C
 docker build -t nginx-angular-showcase -f docker/nginx/Dockerfile .
 docker run -p 8080:80 nginx-angular-showcase
 ```
-
-```bash
-docker build -t scully-angular-showcase -f docker/scully/Dockerfile .
-docker run -p 8080:80 scully-angular-showcase
-```

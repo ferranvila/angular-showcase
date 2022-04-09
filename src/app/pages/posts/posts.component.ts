@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { BehaviorSubject, Observable } from 'rxjs';
-import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
+import { distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Post } from './models';
 import { PostsService } from './services/posts.service';
 
@@ -18,7 +18,7 @@ export class PostsComponent implements OnInit {
 
   ngOnInit(): void {
     this.posts$ = this.searchTerms.pipe(
-      debounceTime(100),
+      // debounceTime(100),
       distinctUntilChanged(),
       switchMap((term: string) => this.postsService.searchPosts(+term))
     );

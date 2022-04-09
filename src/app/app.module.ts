@@ -1,13 +1,13 @@
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
 import { MatIconModule } from '@angular/material/icon';
+import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ScullyLibModule } from '@scullyio/ng-lib';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-import { PostsModule } from './posts/posts.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -15,11 +15,11 @@ import { PostsModule } from './posts/posts.module';
     BrowserModule,
     AppRoutingModule,
     BrowserAnimationsModule,
-    ScullyLibModule,
-    PostsModule,
+    HttpClientModule,
     MatToolbarModule,
     MatIconModule,
     MatButtonModule,
+    MatSnackBarModule,
   ],
   providers: [],
   bootstrap: [AppComponent],

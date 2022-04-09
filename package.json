@@ -4,14 +4,13 @@
   "scripts": {
     "prepare": "husky install",
     "clean": "npx rimraf .angular dist node_modules package-lock.json",
-    "ng": "ng",
     "start": "ng serve",
     "build": "ng build --stats-json",
-    "watch": "ng build --watch --configuration development",
-    "analyze": "webpack-bundle-analyzer dist/angular-showcase/stats.json",
     "test": "ng test",
     "lint": "eslint '*/**/*.{js,ts,tsx}'",
-    "i18n:extract": "ng extract-i18n --output-path=src/locale"
+    "i18n:extract": "ng extract-i18n --output-path=src/locale",
+    "analyze": "webpack-bundle-analyzer dist/angular-showcase/stats.json",
+    "publish": "npx changeset"
   },
   "private": true,
   "engines": {

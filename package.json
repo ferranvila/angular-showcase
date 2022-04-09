@@ -9,7 +9,8 @@
     "watch": "ng build --watch --configuration development",
     "analyze": "webpack-bundle-analyzer dist/angular-showcase/stats.json",
     "test": "ng test",
-    "lint": "eslint '*/**/*.{js,ts,tsx}'"
+    "lint": "eslint '*/**/*.{js,ts,tsx}'",
+    "i18n:extract": "ng extract-i18n --output-path=src/locale"
   },
   "private": true,
   "engines": {
@@ -35,6 +36,7 @@
     "@angular-devkit/build-angular": "13.2.5",
     "@angular/cli": "13.2.5",
     "@angular/compiler-cli": "13.2.0",
+    "@angular/localize": "13.2.0",
     "@types/jasmine": "3.10.0",
     "@types/node": "12.11.1",
     "@typescript-eslint/eslint-plugin": "5.18.0",

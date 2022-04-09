@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en-US" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="title" datatype="html">
+        <source>angular showcase</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/app.component.html</context>
+          <context context-type="linenumber">5</context>
+        </context-group>
+        <note priority="1" from="description">Title for application</note>
+        <note priority="1" from="meaning">App Title</note>
+      </trans-unit>
+      <trans-unit id="filterID" datatype="html">
+        <source>Post Search (ID)</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/posts/posts.component.html</context>
+          <context context-type="linenumber">3</context>
+        </context-group>
+        <note priority="1" from="description">Label for filter ID</note>
+        <note priority="1" from="meaning">Filter ID</note>
+      </trans-unit>
+      <trans-unit id="tableID" datatype="html">
+        <source>ID</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/posts/posts.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+        <note priority="1" from="description">Label for table ID</note>
+        <note priority="1" from="meaning">Table ID</note>
+      </trans-unit>
+      <trans-unit id="tableTitle" datatype="html">
+        <source>Title</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/posts/posts.component.html</context>
+          <context context-type="linenumber">14</context>
+        </context-group>
+        <note priority="1" from="description">Label for table Title</note>
+        <note priority="1" from="meaning">Table Title</note>
+      </trans-unit>
+      <trans-unit id="tableTags" datatype="html">
+        <source>Tags</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">src/app/pages/posts/posts.component.html</context>
+          <context context-type="linenumber">18</context>
+        </context-group>
+        <note priority="1" from="description">Label for table Tags</note>
+        <note priority="1" from="meaning">Table Tags</note>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

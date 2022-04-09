@@ -1,6 +1,6 @@
 {
   "name": "angular-showcase",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "scripts": {
     "prepare": "husky install",
     "clean": "npx rimraf .angular dist node_modules package-lock.json",
@@ -10,7 +10,8 @@
     "lint": "eslint '*/**/*.{js,ts,tsx}'",
     "i18n:extract": "ng extract-i18n --output-path=src/locale",
     "analyze": "webpack-bundle-analyzer dist/angular-showcase/stats.json",
-    "publish": "npx changeset"
+    "publish": "npx changeset",
+    "publish:version": "npx changeset version"
   },
   "private": true,
   "engines": {
